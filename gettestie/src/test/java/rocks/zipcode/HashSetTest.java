@@ -29,7 +29,7 @@ public class HashSetTest {
     }
 
     @Test //Any duplicate elements in a hashSet are automatically removed.
-    public void autoRemoveDuplicateTest(){
+    public void autoRejectDuplicateTest(){
         hashSet.clear();
         hashSet.add(1);
         hashSet.add(2);
@@ -51,6 +51,16 @@ public class HashSetTest {
         HashSet<Integer> expected2 = new HashSet<>();
         Assert.assertEquals(expected2, hashSet);
         Assert.assertEquals(0, hashSet.size());
+    }
 
+    @Test //Test shows how only the contents matter when comparing to hashSets, not the order of the elements.
+    public void OrderDoesNotMatterTest(){
+        hashSet.clear();
+        hashSet.add(1);
+        hashSet.add(2);
+        hashSet.add(3);
+        HashSet<Integer> expected1 = new HashSet<>(Arrays.asList(2,3,1));
+        Assert.assertEquals(expected1, hashSet);
+        Assert.assertEquals(expected1.hashCode(),hashSet.hashCode());
     }
 }
