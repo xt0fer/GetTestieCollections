@@ -1,5 +1,6 @@
 package rocks.zipcode;
 
+import java.util.HashMap;
 import java.util.LinkedList;
 
 /**
@@ -14,16 +15,13 @@ public final class App {
      * @param args The arguments of the program.
      */
     public static void main(String[] args) {
-        LinkedList<Integer> newList = new LinkedList<>();
-        newList.add(1);
-        newList.add(2);
-        newList.add(3);
+        HashMap<Integer, String> map = new HashMap<>();
+        map.put(1, "one");
+        map.put(2, "two");
+        map.put(3, "three");
+        map.put(4, "four");
 
-        System.out.println(newList);
-        newList.remove();
-        System.out.println(newList);
-        newList.remove();
-        System.out.println(newList);
+        System.out.println(map.entrySet());
 
     }
 }
