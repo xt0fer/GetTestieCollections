@@ -1,5 +1,10 @@
 package rocks.zipcode;
 
+import org.junit.Test;
+
+import java.util.ArrayDeque;
+import static org.junit.Assert.assertEquals;
+
 public class TestArrayDeque {
 
     @org.junit.Before
@@ -11,14 +16,43 @@ public class TestArrayDeque {
     }
 
     @org.junit.Test
-    public void TestArrayDeque1(){}
+    public void TestArrayDeque1(){
+        ArrayDeque<Integer> newDeque = new ArrayDeque<>();
+        newDeque.add (1);
+
+        assertEquals(true, newDeque.contains(1));
+    }
+
+    @Test
+    public void TestArrayDeque2(){
+        ArrayDeque<Integer> newDeque = new ArrayDeque<>();
+        newDeque.add(2);
+        newDeque.addFirst(1);
+        newDeque.add(3);
+
+        assertEquals(1, newDeque.getFirst().intValue());
+
+    }
 
     @org.junit.Test
-    public void TestArrayDeque2(){}
+    public void TestArrayDeque3(){
+        ArrayDeque<Integer> newDeque = new ArrayDeque<>();
+        newDeque.add(785);
+        newDeque.add(356);
+        newDeque.add(527);
+        newDeque.add(743);
+
+        assertEquals(743, newDeque.getLast().intValue());
+    }
 
     @org.junit.Test
-    public void TestArrayDeque3(){}
+    public void TestArrayDeque4(){
+        ArrayDeque<Integer> newDeque = new ArrayDeque<>();
+        newDeque.add(785);
+        newDeque.add(356);
+        newDeque.add(527);
+        newDeque.add(743);
 
-    @org.junit.Test
-    public void TestArrayDeque4(){}
+        assertEquals(785, newDeque.removeFirst().intValue());
+    }
 }
