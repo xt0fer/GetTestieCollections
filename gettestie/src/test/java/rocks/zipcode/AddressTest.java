@@ -34,4 +34,30 @@ private static final Logger LOGGER = Logger.getLogger(AddressTest.class.getName(
         LOGGER.log(Level.INFO,expected);
 
     }
+
+    @Test
+    public void testHashMap2(){
+        String nameOne = "G";
+        String nameTwo = "V";
+        int ageOne = 25;
+        int ageTwo = 40;
+
+        Person personOne = new Person(nameOne,ageOne);
+        Person personTwo = new Person(nameTwo,ageTwo);
+        personOne.setAddress("123","mytown","19111");
+        Map<String,Person> testMap = new HashMap<>();
+
+        testMap.put(nameOne,personOne);
+        testMap.put(nameTwo,personTwo);
+
+        int expected = 2;
+        int actual = testMap.size();
+
+        Assert.assertEquals(expected,actual);
+
+        String expectedAddress = "123\nmytown 19111\n\n";
+        String actualAddress = testMap.get("G").getAddress().toString();
+        Assert.assertEquals(expectedAddress,actualAddress);
+        LOGGER.info(actualAddress);
+    }
 }
