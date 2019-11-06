@@ -8,7 +8,6 @@ import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import static org.junit.Assert.*;
 
 public class AddressTest {
 
@@ -220,6 +219,45 @@ public class AddressTest {
     }
 
 //  ******** Linked List ***********
+
+    @Test
+    public void testLinkedLists(){
+        LinkedList<String> testList = new LinkedList<>();
+
+        testList.add("A");
+        testList.add("B");
+        testList.addFirst("C");
+        testList.add(2,"D");
+        String expected = "[C, A, D, B]";
+        String actual = testList.toString();  // prints the elements
+
+        Assert.assertEquals(expected,actual);
+
+
+        testList.addFirst("A");
+        testList.remove(2);
+
+        expected = "[A, C, D, B]";
+        actual = testList.toString();
+
+        Assert.assertEquals(expected,actual);
+
+
+        int listSize = 4;
+        int getSize = testList.size();
+
+        Assert.assertEquals(listSize,getSize);
+
+
+        expected = "ACDB";
+        String newString ="";
+
+        for (int i = 0; i < testList.size(); i++) {
+            newString = newString.concat(testList.get(i));
+        }
+
+        Assert.assertEquals(expected,newString);
+    }
 
 //  ******** Array Deque ***********
 
