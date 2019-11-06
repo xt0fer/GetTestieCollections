@@ -59,5 +59,68 @@ private static final Logger LOGGER = Logger.getLogger(AddressTest.class.getName(
         String actualAddress = testMap.get("G").getAddress().toString();
         Assert.assertEquals(expectedAddress,actualAddress);
         LOGGER.info(actualAddress);
+
     }
+
+    @Test
+    public void testHashMap3(){
+        String nameOne = "G";
+        String nameTwo = "V";
+        int ageOne = 25;
+        int ageTwo = 40;
+
+        Map<String,Integer> testMap = new HashMap<>();
+
+        testMap.put(nameOne,ageOne);
+        testMap.put(nameTwo,ageTwo);
+
+        testMap.remove("G");
+
+        int expected = 1;
+        int actual = testMap.size();
+
+        Assert.assertEquals(expected,actual);
+    }
+
+    @Test
+    public void testHashMap4 (){
+        String nameOne = "G";
+        String nameTwo = "V";
+        int ageOne = 25;
+        int ageTwo = 40;
+
+        Map<String , Integer> testMap = new HashMap<>();
+
+        testMap.clear();
+
+        int expected = 0;
+        int actual = testMap.size();
+
+        Assert.assertEquals(expected,actual);
+
+    }
+
+    @Test
+    public void testHashMap5(){
+        String nameOne = "G";
+        String nameTwo = "V";
+        int ageOne = 25;
+        int ageTwo = 40;
+
+        Map<String, Integer> testMap = new HashMap<>();
+
+        testMap.put(nameOne,ageOne);
+        testMap.put(nameTwo,ageTwo);
+
+        boolean actual = testMap.containsKey("G");
+        Assert.assertTrue(actual);
+
+        boolean actual2 = testMap.containsValue(40);
+        Assert.assertTrue(actual2);
+
+        boolean actual3 = testMap.containsKey("F");
+        Assert.assertFalse(actual3);
+    }
+
+
 }
