@@ -142,6 +142,20 @@ private static final Logger LOGGER = Logger.getLogger(AddressTest.class.getName(
 
         Assert.assertEquals(expected,actual);
     }
+
+    @Test
+    public void testArrayList1(){
+        List<String> testArray = new ArrayList<>();
+
+        for (int i = 1; i<=5;i++ ){
+            testArray.add("Element: " + i);
+        }
+
+        String expected = "Element: 1";
+        String actual = testArray.get(0);
+        Assert.assertEquals(expected,actual);
+
+    }
 //  ******** Hash Set ***********
 
 //  ******** Linked List ***********
