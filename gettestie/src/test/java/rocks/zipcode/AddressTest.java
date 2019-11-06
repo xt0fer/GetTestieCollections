@@ -4,10 +4,7 @@ package rocks.zipcode;
 import org.junit.Test;
 import org.junit.Assert;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -154,6 +151,41 @@ private static final Logger LOGGER = Logger.getLogger(AddressTest.class.getName(
         String expected = "Element: 1";
         String actual = testArray.get(0);
         Assert.assertEquals(expected,actual);
+
+    }
+
+    @Test
+    public void testArrayList2(){
+        List<String> testArray = new ArrayList<>();
+
+        for (int i = 1; i<=5;i++ ){
+            testArray.add("Element: " + i);
+        }
+
+        boolean isThere = testArray.contains("Element: 1");
+        Assert.assertTrue(isThere);
+
+        isThere = testArray.contains("This should not work");
+        Assert.assertFalse(isThere);
+
+        testArray.clear();
+        int expected = 0;
+        int actual = testArray.size();
+        Assert.assertEquals(expected,actual);
+
+        //******
+
+        for (int i = 1; i<=5;i++ ){
+            testArray.add("Element: " + i);
+        }
+
+        String [] tempArray = new String[testArray.size()];
+        testArray.toArray(tempArray);
+
+        String arrayItem = tempArray[0];
+        String compareTo = testArray.get(0);
+
+        Assert.assertEquals(arrayItem,compareTo);
 
     }
 //  ******** Hash Set ***********
