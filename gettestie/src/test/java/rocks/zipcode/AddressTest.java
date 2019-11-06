@@ -4,7 +4,9 @@ package rocks.zipcode;
 import org.junit.Test;
 import org.junit.Assert;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -127,11 +129,26 @@ private static final Logger LOGGER = Logger.getLogger(AddressTest.class.getName(
 
 //  ******** Array List ***********
 
+    @Test
+    public void testArrayList(){
+        List<String> testArray = new ArrayList<>();
+
+        for (int i = 1; i<=5;i++ ){
+            testArray.add("Element: " + i);
+        }
+
+        int expected = 5;
+        int actual = testArray.size();
+
+        Assert.assertEquals(expected,actual);
+    }
 //  ******** Hash Set ***********
 
 //  ******** Linked List ***********
 
 //  ******** Array Deque ***********
+
+
 
 //  ******** Iterator ***********
 
