@@ -12,97 +12,59 @@ import static org.junit.Assert.*;
 
 public class AddressTest {
 
-private static final Logger LOGGER = Logger.getLogger(AddressTest.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(AddressTest.class.getName());
 
 
-//  ********   Hash Map ***********
+    //  ********   Hash Map ***********
     @Test
     public void testHashMap() {
 
         String name = "Valentin";
         int age = 25;
 
-        Person testPerson = new Person(name,age);
-        Map<String,Person> testMap = new HashMap<>();
+        Person testPerson = new Person(name, age);
+        Map<String, Person> testMap = new HashMap<>();
 
-        testMap.put(name,testPerson);
+        testMap.put(name, testPerson);
 
         String expected = testPerson.toString();
         String actual = "Name: " + testMap.get(name).getName() +
             "\nYear of birth: " + testMap.get(name).getYearOfBirth() + "\n";
 
-        Assert.assertEquals(expected,actual);
-        LOGGER.log(Level.INFO,expected);
+        Assert.assertEquals(expected, actual);
+        LOGGER.log(Level.INFO, expected);
 
     }
 
     @Test
-    public void testHashMap2(){
+    public void testHashMap2() {
         String nameOne = "G";
         String nameTwo = "V";
         int ageOne = 25;
         int ageTwo = 40;
 
-        Person personOne = new Person(nameOne,ageOne);
-        Person personTwo = new Person(nameTwo,ageTwo);
-        personOne.setAddress("123","mytown","19111");
-        Map<String,Person> testMap = new HashMap<>();
+        Person personOne = new Person(nameOne, ageOne);
+        Person personTwo = new Person(nameTwo, ageTwo);
+        personOne.setAddress("123", "mytown", "19111");
+        Map<String, Person> testMap = new HashMap<>();
 
-        testMap.put(nameOne,personOne);
-        testMap.put(nameTwo,personTwo);
+        testMap.put(nameOne, personOne);
+        testMap.put(nameTwo, personTwo);
 
         int expected = 2;
         int actual = testMap.size();
 
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
 
         String expectedAddress = "123\nmytown 19111\n\n";
         String actualAddress = testMap.get("G").getAddress().toString();
-        Assert.assertEquals(expectedAddress,actualAddress);
+        Assert.assertEquals(expectedAddress, actualAddress);
         LOGGER.info(actualAddress);
 
     }
 
     @Test
-    public void testHashMap3(){
-        String nameOne = "G";
-        String nameTwo = "V";
-        int ageOne = 25;
-        int ageTwo = 40;
-
-        Map<String,Integer> testMap = new HashMap<>();
-
-        testMap.put(nameOne,ageOne);
-        testMap.put(nameTwo,ageTwo);
-
-        testMap.remove("G");
-
-        int expected = 1;
-        int actual = testMap.size();
-
-        Assert.assertEquals(expected,actual);
-    }
-
-    @Test
-    public void testHashMap4 (){
-        String nameOne = "G";
-        String nameTwo = "V";
-        int ageOne = 25;
-        int ageTwo = 40;
-
-        Map<String , Integer> testMap = new HashMap<>();
-
-        testMap.clear();
-
-        int expected = 0;
-        int actual = testMap.size();
-
-        Assert.assertEquals(expected,actual);
-
-    }
-
-    @Test
-    public void testHashMap5(){
+    public void testHashMap3() {
         String nameOne = "G";
         String nameTwo = "V";
         int ageOne = 25;
@@ -110,8 +72,46 @@ private static final Logger LOGGER = Logger.getLogger(AddressTest.class.getName(
 
         Map<String, Integer> testMap = new HashMap<>();
 
-        testMap.put(nameOne,ageOne);
-        testMap.put(nameTwo,ageTwo);
+        testMap.put(nameOne, ageOne);
+        testMap.put(nameTwo, ageTwo);
+
+        testMap.remove("G");
+
+        int expected = 1;
+        int actual = testMap.size();
+
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testHashMap4() {
+        String nameOne = "G";
+        String nameTwo = "V";
+        int ageOne = 25;
+        int ageTwo = 40;
+
+        Map<String, Integer> testMap = new HashMap<>();
+
+        testMap.clear();
+
+        int expected = 0;
+        int actual = testMap.size();
+
+        Assert.assertEquals(expected, actual);
+
+    }
+
+    @Test
+    public void testHashMap5() {
+        String nameOne = "G";
+        String nameTwo = "V";
+        int ageOne = 25;
+        int ageTwo = 40;
+
+        Map<String, Integer> testMap = new HashMap<>();
+
+        testMap.put(nameOne, ageOne);
+        testMap.put(nameTwo, ageTwo);
 
         boolean actual = testMap.containsKey("G");
         Assert.assertTrue(actual);
@@ -127,38 +127,38 @@ private static final Logger LOGGER = Logger.getLogger(AddressTest.class.getName(
 //  ******** Array List ***********
 
     @Test
-    public void testArrayList(){
+    public void testArrayList() {
         List<String> testArray = new ArrayList<>();
 
-        for (int i = 1; i<=5;i++ ){
+        for (int i = 1; i <= 5; i++) {
             testArray.add("Element: " + i);
         }
 
         int expected = 5;
         int actual = testArray.size();
 
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
     }
 
     @Test
-    public void testArrayList1(){
+    public void testArrayList1() {
         List<String> testArray = new ArrayList<>();
 
-        for (int i = 1; i<=5;i++ ){
+        for (int i = 1; i <= 5; i++) {
             testArray.add("Element: " + i);
         }
 
         String expected = "Element: 1";
         String actual = testArray.get(0);
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
 
     }
 
     @Test
-    public void testArrayList2(){
+    public void testArrayList2() {
         List<String> testArray = new ArrayList<>();
 
-        for (int i = 1; i<=5;i++ ){
+        for (int i = 1; i <= 5; i++) {
             testArray.add("Element: " + i);
         }
 
@@ -171,29 +171,57 @@ private static final Logger LOGGER = Logger.getLogger(AddressTest.class.getName(
         testArray.clear();
         int expected = 0;
         int actual = testArray.size();
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
 
         //******
 
-        for (int i = 1; i<=5;i++ ){
+        for (int i = 1; i <= 5; i++) {
             testArray.add("Element: " + i);
         }
 
-        String [] tempArray = new String[testArray.size()];
+        String[] tempArray = new String[testArray.size()];
         testArray.toArray(tempArray);
 
         String arrayItem = tempArray[0];
         String compareTo = testArray.get(0);
 
-        Assert.assertEquals(arrayItem,compareTo);
+        Assert.assertEquals(arrayItem, compareTo);
+
+        System.out.println(tempArray.toString()); // prints reference
 
     }
+
 //  ******** Hash Set ***********
+
+    @Test
+    public void testHashSets() {
+        Set<String> newHasSet = new HashSet();
+        newHasSet.add("A");
+        newHasSet.add("B");
+        newHasSet.add("A");
+        newHasSet.add("a");
+
+        int expected = 3;
+        int actual = newHasSet.size();
+
+        Assert.assertEquals(expected, actual);
+
+        System.out.println(newHasSet.toString());  // prints the elements of the set
+
+
+        boolean containsvalue = true;
+        Assert.assertTrue(newHasSet.contains("A"));
+
+        int setSize = 0;
+        newHasSet.clear();
+
+        Assert.assertEquals(setSize, newHasSet.size());
+
+    }
 
 //  ******** Linked List ***********
 
 //  ******** Array Deque ***********
-
 
 
 //  ******** Iterator ***********
@@ -201,7 +229,6 @@ private static final Logger LOGGER = Logger.getLogger(AddressTest.class.getName(
 //  ******** Stack ***********
 
 //  ******** Comparable ***********
-
 
 
 }
