@@ -15,6 +15,8 @@ public class AddressTest {
 
 private static final Logger LOGGER = Logger.getLogger(AddressTest.class.getName());
 
+
+//  ********   Hash Map ***********
     @Test
     public void testHashMap() {
 
@@ -121,6 +123,22 @@ private static final Logger LOGGER = Logger.getLogger(AddressTest.class.getName(
         boolean actual3 = testMap.containsKey("F");
         Assert.assertFalse(actual3);
     }
+
+
+//  ******** Array List ***********
+
+//  ******** Hash Set ***********
+
+//  ******** Linked List ***********
+
+//  ******** Array Deque ***********
+
+//  ******** Iterator ***********
+
+//  ******** Stack ***********
+
+//  ******** Comparable ***********
+
 
 
 }
