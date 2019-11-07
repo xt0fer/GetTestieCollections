@@ -10,7 +10,7 @@ public class LinkedListTest {
 
     @Test
     public void containsTest(){
-        LinkedList<Integer> newList = new LinkedList<Integer>(Arrays.asList(1,2,3));
+        LinkedList<Integer> newList = new LinkedList<>(Arrays.asList(1,2,3));
 
         Assert.assertTrue(newList.contains(2));
         Assert.assertTrue(newList.contains(1));
@@ -19,7 +19,7 @@ public class LinkedListTest {
 
     @Test
     public void addMethodsTest(){
-        LinkedList<Integer> newList = new LinkedList<Integer>(Arrays.asList(2));
+        LinkedList<Integer> newList = new LinkedList<>(Arrays.asList(2));
         Assert.assertEquals((Integer) 2, newList.get(0));
 
         newList.addFirst(1);  //Adds element to the beginning of the list.
@@ -29,13 +29,15 @@ public class LinkedListTest {
         Assert.assertEquals((Integer) 3, newList.get(2));
 
         newList.add(2,10);                 // Adds element at specified index,
-        Assert.assertEquals((Integer) 10, newList.get(2));// and increases the index of all other elements ahead of it by one.
-        Assert.assertEquals((Integer) 2, newList.get(3));
+        Assert.assertEquals((Integer) 1, newList.get(0)); // and increases the index of all other elements ahead of it by one.
+        Assert.assertEquals((Integer) 2, newList.get(1));
+        Assert.assertEquals((Integer) 10, newList.get(2));
+        Assert.assertEquals((Integer) 3, newList.get(3));
     }
 
     @Test //LinkedLists have a "First in, First Out" structure.
     public void removeTest(){
-        LinkedList<Integer> newList = new LinkedList<Integer>(Arrays.asList(1,2,3,4,5,5,6));
+        LinkedList<Integer> newList = new LinkedList<>(Arrays.asList(1,2,3,4,5,5,6));
 
         newList.remove(); //removes element at index 0 and shifts all other elements down by an index of 1.
         Assert.assertEquals((Integer) 2, newList.get(0));
