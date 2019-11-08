@@ -227,6 +227,7 @@ public class AddressTest {
     @Test
     public void testLinkedLists() {
         // add, addFirst/addLast, remove(index)
+        // faster than ArrayList at removal/insertion of elements in the middle
         LinkedList<String> testList = new LinkedList<>();
 
         testList.add("A");
@@ -374,5 +375,28 @@ public class AddressTest {
 
 //  ******** Comparable ***********
 
+    @Test
+    public void testComparable(){
+        Person person1 = new Person("V",1980);
+        Person person2 = new Person("G",1975);
+        Person person3 = new Person("B",1982);
+        Person person4 = new Person("X",1971);
 
+        ArrayList<Person> testArray = new ArrayList<>();
+
+        testArray.add(person1);
+        testArray.add(person2);
+        testArray.add(person3);
+        testArray.add(person4);
+
+        Collections.sort(testArray); // will sort based on the year ; compareTo method in the Person class
+
+        // public class Person implements Comparable<Person>
+        // this.name.compareTo(personToCompare.name) - for string
+        // this.yearOfBirth - personToCompare.yearOfBirth - for integer
+
+        System.out.println(testArray);
+
+
+    }
 }
