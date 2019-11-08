@@ -221,17 +221,17 @@ public class AddressTest {
 //  ******** Linked List ***********
 
     @Test
-    public void testLinkedLists(){
+    public void testLinkedLists() {
         LinkedList<String> testList = new LinkedList<>();
 
         testList.add("A");
         testList.add("B");
         testList.addFirst("C");
-        testList.add(2,"D");
+        testList.add(2, "D");
         String expected = "[C, A, D, B]";
         String actual = testList.toString();  // prints the elements
 
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
 
 
         testList.addFirst("A");
@@ -240,26 +240,55 @@ public class AddressTest {
         expected = "[A, C, D, B]";
         actual = testList.toString();
 
-        Assert.assertEquals(expected,actual);
+        Assert.assertEquals(expected, actual);
 
 
         int listSize = 4;
         int getSize = testList.size();
 
-        Assert.assertEquals(listSize,getSize);
+        Assert.assertEquals(listSize, getSize);
 
 
         expected = "ACDB";
-        String newString ="";
+        String newString = "";
 
         for (int i = 0; i < testList.size(); i++) {
             newString = newString.concat(testList.get(i));
         }
 
-        Assert.assertEquals(expected,newString);
+        Assert.assertEquals(expected, newString);
     }
 
 //  ******** Array Deque ***********
+
+    @Test
+    public void testDequeArray() {
+        // same as linkedlist but you don't have an insertion point
+
+        Deque<String> testArray = new ArrayDeque<>();
+
+        testArray.add("One");
+        testArray.add("Two");
+        testArray.add("Three");
+        testArray.addFirst("Four");
+
+        String expected = "[Four, One, Two, Three]";
+        String actual = testArray.toString();
+
+        Assert.assertEquals(expected,actual);
+
+        testArray.remove("One");
+        Integer arrayElements = 3;
+        Integer actualElements = testArray.size();
+
+        Assert.assertEquals(arrayElements,actualElements);
+        // testArray.peek(); - shows the first element (Four)
+        // testArray.element() - same as peek
+
+        // testArray.pop() - removes last element
+        // testArray.poll() - removes first element
+
+    }
 
 
 //  ******** Iterator ***********
