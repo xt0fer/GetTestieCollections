@@ -293,6 +293,48 @@ public class AddressTest {
 
 //  ******** Iterator ***********
 
+    @Test
+    public void testIterator(){
+        Deque<Integer> testArray = new ArrayDeque<>();
+        int result = 0;
+        int expected = 15;
+
+        for (int i = 0; i <= 5 ; i++) {
+            testArray.add(i);
+        }
+
+        for (Iterator iterator = testArray.iterator(); iterator.hasNext();) {
+            result += (Integer) iterator.next();
+        }
+        Assert.assertEquals(expected,result);
+
+        // ******************
+
+
+        expected = 9;
+        result = 0;
+        Iterator itr = testArray.iterator();
+
+        while (itr.hasNext()){
+            int element = (Integer) itr.next();
+
+            // remove even elements
+            if (element % 2 == 0){
+                itr.remove();
+            }
+        }
+
+        for (Iterator iterator = testArray.iterator(); iterator.hasNext();) {
+            result += (Integer) iterator.next();
+        }
+        Assert.assertEquals(expected,result);
+
+//        for(Iterator iterator = testArray.descendingIterator(); iterator.hasNext();){
+//            // descending order
+//        }
+
+
+    }
 //  ******** Stack ***********
 
 //  ******** Comparable ***********
