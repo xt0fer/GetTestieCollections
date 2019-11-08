@@ -37,6 +37,8 @@ public class AddressTest {
 
     @Test
     public void testHashMap2() {
+        // put, get (keyvalue), remove (keyvalue), clear, containskey, containsvalue
+
         String nameOne = "G";
         String nameTwo = "V";
         int ageOne = 25;
@@ -194,6 +196,8 @@ public class AddressTest {
 
     @Test
     public void testHashSets() {
+        // add, contains, clear, isEmpty, iterator
+
         Set<String> newHasSet = new HashSet();
         newHasSet.add("A");
         newHasSet.add("B");
@@ -222,6 +226,7 @@ public class AddressTest {
 
     @Test
     public void testLinkedLists() {
+        // add, addFirst/addLast, remove(index)
         LinkedList<String> testList = new LinkedList<>();
 
         testList.add("A");
@@ -264,6 +269,7 @@ public class AddressTest {
     @Test
     public void testDequeArray() {
         // same as linkedlist but you don't have an insertion point
+        // peek / element - shows first element; pop / poll - removes first element
 
         Deque<String> testArray = new ArrayDeque<>();
 
@@ -282,14 +288,8 @@ public class AddressTest {
         Integer actualElements = testArray.size();
 
         Assert.assertEquals(arrayElements,actualElements);
-        // testArray.peek(); - shows the first element (Four)
-        // testArray.element() - same as peek
-
-        // testArray.pop() - removes last element
-        // testArray.poll() - removes first element
 
     }
-
 
 //  ******** Iterator ***********
 
@@ -335,7 +335,42 @@ public class AddressTest {
 
 
     }
+
 //  ******** Stack ***********
+
+    @Test
+    public void testStack(){
+        // pop, push / add, peek, isEmpty, size
+
+        Stack<String> myStack = new Stack<>();
+
+        myStack.push("First");
+        myStack.add("Second");
+        myStack.add("three");
+
+        int expected = 3;
+        int actual = myStack.size();
+        Assert.assertEquals(expected,actual);
+
+        expected = 2;
+        String element = myStack.pop(); // removes and returns last added
+        actual = myStack.size();
+        Assert.assertEquals(expected,actual);
+        Assert.assertEquals("three",element);
+
+        myStack.push("Four");
+        element = myStack.peek();
+       Assert.assertEquals("Four",element);
+
+       boolean isEmpty = true;
+       isEmpty = myStack.isEmpty();
+       Assert.assertFalse(isEmpty);
+
+       myStack.clear();
+       isEmpty = myStack.isEmpty();
+       Assert.assertTrue(isEmpty);
+
+    }
 
 //  ******** Comparable ***********
 
