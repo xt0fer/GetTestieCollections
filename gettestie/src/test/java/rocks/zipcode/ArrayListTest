@@ -1,0 +1,65 @@
+package rocks.zipcode;
+
+import org.junit.Test;
+import java.util.Collections;
+import java.util.List;
+import static  org.junit.Assert.assertEquals;
+
+public class ArrayListTest {
+    private ArrayList<String>array;
+
+    @org.junit.Before
+    public  void setUp() throws Exception {
+        array = new ArrayList<>();
+        array.add("Hello World");
+        array.add("Charlotte");
+        array.add("Aspiring Software Developer");
+    }
+
+    @org.junit.After
+    public void tearDown() throws Exception {
+    }
+
+    @org.junit.Test
+    public void ArrayListGetIndexTest() {
+        assertEquas("Charlotte", array.get(1));
+    }
+
+    @Test
+    public void ArrayListContainsTest() {
+        assertEquals(true, array.contains("Charlotte"));
+    }
+}
+
+
+@Test
+public vois ArrayListSubListTest() {
+    List<String> arrlist2 = array.subList(1, 2);
+    assertEquals(array.get(1), arrlist2.get(0));
+}
+
+
+@Test
+public void ArrayListRemoveTest() {
+    assertEquals(true, array.remove("Charlotte"));
+    System.out.print(array); // displays [Hello World, Aspiring Software Developer]
+}
+
+
+@Test
+public void ArrayListAddAll() {
+    ArrayList<String> arrlist2 = new ArrayList<String>();
+    arrlist2.add("Study Extra Hard");
+    arrlist2.add("Stress Less");
+    arrlist2.add("Celebrate at the end");
+    arrlist2.add("It will be worth it");
+    assertEquals(true, array.addAll(arrlist2));
+    System.out.print(array); //displays [Hello World, Charlotte, Aspiring Software Developer, Study Extra Hard, Stress Less, Celebrate at the end, It will be worth it]
+}
+
+@Test
+public void ArrayListReverseTest(){
+    Collections.reverse(array);
+    assertEquals(array.subList(0, 3), array);
+    System.out.print(array); //displays [Aspiring Software Developer, Charlotte, Hello World]
+}

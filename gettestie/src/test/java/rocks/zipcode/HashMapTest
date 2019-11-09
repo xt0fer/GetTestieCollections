@@ -1,0 +1,51 @@
+package rocks.zipcode;
+
+import org.junit.Test;
+import java.util.HashMap;
+import static org.junit.Assert.*;
+
+public class HashMapTest {
+    HashMap<String, String> Map;
+
+    @Before
+
+    public void setUp() throws Exception {
+        Map = new HashMap<>();
+        //Add keys and values to HashMap
+        Map.put("Language", "Python");
+        Map.put("Platform", "JavaFlowGeeks");
+        Map.put("Code", "HashMap");
+        Map.put("Learn", "More");
+    }
+
+    @After
+    public void tearDown() throws Exception {
+    }
+
+    @Test
+    public void HashMapContainsKeyTest() {
+        assertTrue(Map.containsKey("Code"));
+    }
+
+    @Test
+    public void HashMapEmpytTest() {
+        assertFalse(Map.isEmpty());
+    }
+
+
+    @Test
+    public void HashMapRemoveTest() {
+        assertTrue(Map.remove("Code", "HashMap"));
+    }
+
+    @Test
+    public void HashMapClearTest() {
+        Map.clear();
+        assertEquals(true, Map.isEmpty());
+    }
+
+    @Test
+    public void HashMapReplaceTest() {
+        assertEquals("JavaFlowGeeks", Map.replace("Platform", "StackOverFlow"));
+    }
+}

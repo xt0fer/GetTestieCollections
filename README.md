@@ -2,8 +2,8 @@
 write some tests that exercise the Collections classes
 
 
-create a project where you write 1 or 2 tests for each every one of these Collections classes. Figure out what the most common, most useful methods are, and use them in the test you write for the class.
-The class should be, say, TestHashMap, and then have a TestHasMap methid which uses the various methods you deem useful.
+create a project where you write 1 or 2 tests for each and every one of these Collections classes. Figure out what the most common, most useful methods are, and use them in the test you write for the class.
+The class should be, say, TestHashMap, and then have a TestHasMap method which uses the various methods you deem useful.
 
 I've included two classes, `Person` and `Address` should you need a concrete class to supply to a generic structure. Feel free to use `Integer` and/or `String` as well.
 

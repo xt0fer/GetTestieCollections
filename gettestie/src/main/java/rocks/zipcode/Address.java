@@ -1,4 +1,4 @@
-package gettestie.src.main.java.rocks.zipcode;
+package rocks.zipcode;
 
 public class Address {
     private String street;
@@ -27,6 +27,7 @@ public class Address {
      * Return a string representation of this object.
      */
     public String toString() {
+
         return street + "\n" + town + " " + postCode + "\n" + country + "\n";
     }
 }
