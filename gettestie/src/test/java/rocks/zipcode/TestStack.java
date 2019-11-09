@@ -13,7 +13,7 @@ public class TestStack {
     public void tearDown() throws Exception {
     }
 
-    @org.junit.Test
+    @Test
     public void TestStack1() {
         Stack<String> stack = new Stack<>();
         stack.push("Hello world");

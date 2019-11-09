@@ -1,0 +1,49 @@
+package rocks.zipcode;
+
+import org.junit.Test;
+
+import java.util.TreeMap;
+
+import static org.junit.Assert.*;
+
+public class TreeMapTest {
+    TreeMap<String, Integer> treeM;
+
+    @org.junit.Before
+    public void setUp() throws Exception {
+        treeM = new TreeMap<>();
+        treeM.put("I",1);
+        treeM.put("Love",2);
+        treeM.put("ZipCode",3);
+        treeM.put("Wilmington",4);
+        treeM.put("Cohort 5.2",5);
+
+    }
+    @org.junit.After
+    public void tearDown() throws Exception {
+    }
+    @Test
+    public void TestTreeMapSize() {
+        assertEquals(5, treeM.size());
+    }
+
+    @Test
+    public void TestTreeMapContainsKey() {
+        assertTrue(treeM.containsKey("I"));
+    }
+
+    @Test
+    public void TestTreeMapContainsValue() {
+        assertFalse(treeM.containsValue(6));
+    }
+
+    @Test
+    public void TestTreeMapFloorKey() {
+        assertEquals("Cohort 5.2",treeM.floorKey("Cohort 5.2"));
+    }
+    @Test
+    public void TestTreeMapClear() {
+        treeM.clear();
+        assertEquals(true, treeM.isEmpty());
+    }
+}

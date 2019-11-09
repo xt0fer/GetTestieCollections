@@ -1,0 +1,50 @@
+package rocks.zipcode;
+
+import org.junit.Test;
+
+import java.util.NavigableSet;
+import java.util.TreeSet;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+
+public class TestTreeSet {
+    TreeSet<String> ts1 = new TreeSet<String>();
+
+    @Before
+    public void setUp() throws Exception {
+        // Elements are added using add() method
+        ts1.add("C");
+        ts1.add("D");
+        ts1.add("B");
+
+        // Duplicates will not get insert
+        ts1.add("C");
+    }
+
+    @After
+    public void tearDown() throws Exception {
+    }
+
+    @Test
+    public void TreeSetEmptyTest() {
+        assertFalse(ts1.isEmpty());
+    }
+    @Test
+    public void TreeSetSizeTest() {
+        assertEquals(3,ts1.size());
+    }
+    @Test
+    public void TreeSetDescendingSetTest() {
+        NavigableSet<String> treereverse = ts1.descendingSet();
+        assertEquals(ts1, treereverse);
+    }
+    @Test
+    public void TreeSetLastTest() {
+        assertEquals("B",ts1.last());
+    }
+    @Test
+    public void TreeSetPollFirstTest() {
+        assertEquals("C",ts1.pollFirst());
+    }
+}

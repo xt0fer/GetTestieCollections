@@ -2,3 +2,48 @@ package rocks.zipcode;
 
 import org.junit.Test;
 import java.util.LinkedList;
+import static org junit.Assert.*;
+
+public class PriorityQueueTest {
+    LinkedList<String> lists;
+
+    @Before
+    public void setUp() throws Exception {
+        list = new LinkedList<String>();
+        list.add("This");
+        list.add("Is");
+        list.add("Waaaaaaay");
+        list.add("Too");
+        list.add("Many");
+        list.add("Tests");
+    }
+    @After
+    public void tearDown() throws Exception {
+    }
+
+    @Test
+    public void PriorityQueueOfferTest() {
+        assertEquals(list.offer("This"));
+    }
+
+    @Test
+    public void PriorityQueuePeekTest() {
+        assertEquals("This", list.peek());
+    }
+
+    @Test
+    public void PriorityQueueContainsTest() {
+        assertTrue(list.contains("This"));
+    }
+
+    @Test
+    public void PriorityQueueSizeTest() {
+        assertEquals(6, list.size());
+    }
+
+    @Test
+    public void PriorityQueuePollLLastTest() {
+        assertEquals("Tests", list.pollLast());
+    }
+
+}
