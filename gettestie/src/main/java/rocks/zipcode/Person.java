@@ -63,4 +63,10 @@ public class Person {
     {
         return "Name: " + name + "\n" + "Year of birth: " + yearOfBirth + "\n";
     }
+
+    //why does this not work :'(
+    /*@Override
+    public int compareTo(Person o) {
+        return this.getYearOfBirth() - o.getYearOfBirth();
+    }*/
 }
