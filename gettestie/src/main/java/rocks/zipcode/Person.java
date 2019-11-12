@@ -1,7 +1,9 @@
 package rocks.zipcode;
 import rocks.zipcode.Address;
 
-public class Person {
+import java.util.Comparator;
+
+public class Person implements Comparable<Person> {
     private String name;
     private int yearOfBirth;
     private Address address;
@@ -64,9 +66,8 @@ public class Person {
         return "Name: " + name + "\n" + "Year of birth: " + yearOfBirth + "\n";
     }
 
-    //why does this not work :'(
-    /*@Override
+    @Override
     public int compareTo(Person o) {
         return this.getYearOfBirth() - o.getYearOfBirth();
-    }*/
+    }
 }
