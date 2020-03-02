@@ -9,13 +9,7 @@ public class TestComparable {
 
     @Test
     public void tearDown() throws Exception {
-    }
 
-    @Test
-    public void TestComparable() {
-        String string1 = "Jelly Beans";
-        String string2 = "Rabbits";
-        Assert.assertEquals(-8, string1.compareTo(string2));
     }
 
     @Test
@@ -33,7 +27,7 @@ public class TestComparable {
         Assert.assertEquals(-1, number2.compareTo(number1));
     }
     @Test
-    public void TestCamparable3() {
+    public void TestComparable3() {
         String string1 = "Hi There";
         String string2 = "Hi There";
 
