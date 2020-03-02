@@ -1,4 +1,4 @@
-package gettestie.src.main.java.rocks.zipcode;
+package rocks.zipcode;
 
 
 public class Person {
@@ -9,7 +9,7 @@ public class Person {
     /**
      * Create a person with given name and age.
      */
-    Person(String name, int yearOfBirth) {
+    public Person(String name, int yearOfBirth) {
         this.name = name;
         this.yearOfBirth = yearOfBirth;
     }
