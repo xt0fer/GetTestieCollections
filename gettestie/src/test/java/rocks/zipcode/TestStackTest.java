@@ -3,7 +3,7 @@ package rocks.zipcode;
 import static org.junit.Assert.*;
 import java.util.Stack;
 
-public class TestStack {
+public class TestStackTest {
 
     @org.junit.Before
     public void setUp() throws Exception {
