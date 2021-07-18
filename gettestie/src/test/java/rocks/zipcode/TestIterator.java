@@ -1,4 +1,5 @@
 package rocks.zipcode;
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.ArrayList;
@@ -10,6 +11,26 @@ import static org.junit.Assert.*;
 
 public class TestIterator {
 
+    @Test
+    public void iteratorTest() {
+        int num = 30;
+        ArrayList<Integer> list = new ArrayList<>(num);
+
+        list.add(2);
+        list.add(4);
+        list.add(6);
+        list.add(8);
+        list.add(10);
+
+        Iterator<Integer> iterator = list.iterator();
+        Integer actual = 0;
+        while(iterator.hasNext()) {
+            actual = actual + iterator.next();
+        }
+        Integer expected = 30;
+
+        Assert.assertEquals(expected, actual);
+    }
     @Test
     public void TestHasNext() {
         HashSet<Integer> set = new HashSet<>();
