@@ -46,6 +46,6 @@ public class LinkedListTest {
 
         //then
         Assert.assertEquals(word1, pollWord);
-        Assert.assertEquals(2, size); //reduces size by 2
+        Assert.assertEquals(2, size); //reduces size by 1
     }
 }

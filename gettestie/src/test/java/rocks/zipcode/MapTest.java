@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 public class MapTest {
 
@@ -66,5 +67,24 @@ public class MapTest {
 
         //then
         Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void treeMapTest(){
+        //given
+        Map<String, Integer> yearBorn = new TreeMap<>(); //Person = key, Year = value
+        Person person1 = new Person("Carl", 1992);
+        Person person2 = new Person("Jerome", 2000);
+        Person person3 = new Person("Taylor", 2000);
+        yearBorn.put(person1.getName(), person1.getYearOfBirth());
+        yearBorn.put(person2.getName(), person2.getYearOfBirth());
+        yearBorn.put(person3.getName(), person3.getYearOfBirth());
+
+        //when
+        yearBorn.put(person2.getName(), 2001);
+
+
+        //then
+        System.out.println(yearBorn); //sorts by name value alphabetically
     }
 }
