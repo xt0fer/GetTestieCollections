@@ -10,6 +10,7 @@ public class Address {
      * Construct an Address without country
      */
     public Address(String street, String town, String postCode) {
+
         this(street, town, postCode, "");
     }
 
@@ -27,6 +28,7 @@ public class Address {
      * Return a string representation of this object.
      */
     public String toString() {
+
         return street + "\n" + town + " " + postCode + "\n" + country + "\n";
     }
 }
